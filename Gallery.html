@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art & Design Studio</title>
+    <style> 
+        /* Reset Styles */
+        body, h1, h2, h3, p, ul, li, a, input, textarea, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url("background.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1000;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            max-width: 90%;
+        }
+
+        .lightbox img {
+            max-width: 60%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+
+        .lightbox-info {
+            color: #fff;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .lightbox-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .lightbox-info p {
+            margin-bottom: 10px;
+        }
+
+        .lightbox-info .price {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .lightbox-info .order-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .lightbox-info .order-btn:hover {
+            background: #218838;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Art & Design Studio</h1>
+            <nav>
+                <ul>
+                    <li><a href="PROJECT ICT LAB 1.html">Home</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="Contact Us.html">Contact</a></li>
+                    <li><a href="Registration.html">Registration</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="digitalArt1.jpg" href="confirmorder.html"  alt="Digital Art 1" data-title="Digital Art 1" data-description="A stunning piece of abstract digital art." data-price="$200">
+                <img src="digitalArt2.jpg" alt="Digital Art 2" data-title="Digital Art 2" data-description="A mesmerizing landscape painting." data-price="$300">
+                <img src="digitalArt3.jpg" alt="Digital Art 3" data-title="Digital Art 3" data-description="A vibrant digital art composition." data-price="$250">
+                <img src="digitalArt4.jpg" alt="Digital Art 4" data-title="Digital Art 4" data-description="A surreal depiction of a dreamscape." data-price="$275">
+                <img src="digitalArt5.jpg" alt="Digital Art 5" data-title="Digital Art 5" data-description="An intricate piece inspired by nature." data-price="$350">
+                <img src="digitalArt6.jpg" alt="Digital Art 6" data-title="Digital Art 6" data-description="A modern abstract artwork with bold colors." data-price="$400">
+                <img src="digitalArt7.jpg" alt="Digital Art 7" data-title="Digital Art 7" data-description="A minimalist art composition." data-price="$180">
+                <img src="digitalArt8.jpg" alt="Digital Art 8" data-title="Digital Art 8" data-description="A peaceful forest scene with digital detailing." data-price="$320">
+                <img src="digitalArt9.jpg" alt="Digital Art 9" data-title="Digital Art 9" data-description="A vibrant cityscape during sunset." data-price="$290">
+                <img src="digitalArt10.jpg" alt="Digital Art 10" data-title="Digital Art 10" data-description="A futuristic digital concept art." data-price="$500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="closeLightbox">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="Expanded Image" id="lightboxImage">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle">Image Title</h3>
+                <p id="lightboxDescription">Image description goes here.</p>
+                <p class="price" id="lightboxPrice">$0.00</p>
+                <a href="confirmorder.html" class="order-btn" id="orderBtn">Order Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDescription = document.getElementById('lightboxDescription');
+        const lightboxPrice = document.getElementById('lightboxPrice');
+        const orderBtn = document.getElementById('orderBtn');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        document.querySelectorAll('.gallery-grid img').forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxImage.src = image.src;
+                lightboxTitle.textContent = image.dataset.title;
+                lightboxDescription.textContent = image.dataset.description;
+                lightboxPrice.textContent = image.dataset.price;
+                orderBtn.href = `order.html?title=${encodeURIComponent(image.dataset.title)}&price=${encodeURIComponent(image.dataset.price)}`;
+                lightbox.classList.add('active');
+            });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImage && !e.target.closest('.lightbox-content')) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
